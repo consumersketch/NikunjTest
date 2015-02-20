@@ -1,0 +1,55 @@
+<?php
+
+namespace Acme\Bundle\TestBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Invoices
+ *
+ * @ORM\Table(name="invoices")
+ * @ORM\Entity(repositoryClass="Acme\Bundle\TestBundle\Entity\InvoicesRepository")
+ */
+class Invoices
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+	
+	/**
+     * @var string $invoiceDate
+     *
+     * @ORM\Column(name="invoice_date", type="string", length=200, nullable=false)
+     */
+    private $invoiceDate;
+	
+	/**
+     * @var string $clientId
+     *
+     * @ORM\Column(name="client_id", type="string", length=100, nullable=false)
+     */
+    private $clientId;
+	
+	/**
+     * @var string $invoiceNum
+     *
+     * @ORM\Column(name="invoice_num", type="string", length=11, nullable=false)
+     */
+    private $invoiceNum;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}
